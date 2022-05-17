@@ -18,20 +18,20 @@ while True:
     cv2.imshow('hsv', hsv)
     cv2.imshow('hls', hls)
 
-    lower_green_hsv = np.array([0, 0, 0])
-    upper_green_hsv = np.array([100, 100, 100])
+    lower_hsv = np.array([0, 0, 0])
+    upper_hsv = np.array([100, 100, 100])
 
-    lower_green_bgr = np.array([0, 0, 0])
-    upper_green_bgr = np.array([100, 100, 100])
+    lower_bgr = np.array([0, 0, 0])
+    upper_bgr = np.array([100, 100, 100])
 
-    lower_lab = np.array([38, -35, 21])
-    upper_lab = np.array([19, -40, 21])
+    lower_lab = np.array([0, 0, 0])
+    upper_lab = np.array([100, 100, 100])
 
-    lower_hls = np.array([131, 100, 50])
-    upper_hls = np.array([131, 100, 22])    
+    lower_hls = np.array([0, 0, 0])
+    upper_hls = np.array([100, 100, 100])    
 
-    maskhsv = cv2.inRange(hsv, lower_green_hsv, upper_green_hsv)
-    maskbgr = cv2.inRange(frame, lower_green_bgr, upper_green_bgr)
+    maskhsv = cv2.inRange(hsv, lower_hsv, upper_hsv)
+    maskbgr = cv2.inRange(frame, lower_bgr, upper_bgr)
     masklab = cv2.inRange(lab, lower_lab, upper_lab)
     maskhls = cv2.inRange(hls, lower_hls, upper_hls)
     
